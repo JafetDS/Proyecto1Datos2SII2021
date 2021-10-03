@@ -1,0 +1,3 @@
+D:/Datos2/Proyecto1/Proyecto1Datos2SII2021/cmake-build-debug/CMakeFiles/Proyecto1Datos2SII2021.dir
+D:/Datos2/Proyecto1/Proyecto1Datos2SII2021/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Datos2/Proyecto1/Proyecto1Datos2SII2021/cmake-build-debug/CMakeFiles/rebuild_cache.dir
