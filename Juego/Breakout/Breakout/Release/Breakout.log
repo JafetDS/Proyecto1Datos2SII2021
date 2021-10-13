@@ -1,0 +1,17 @@
+﻿  App.cpp
+  Ball.cpp
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(21,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(40,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(41,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+  Brick.cpp
+  Engine.cpp
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Engine.cpp(24,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Engine.cpp(24,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Paddle.cpp
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Paddle.cpp(58,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  67 of 67 functions (100.0%) were compiled.
+    66 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Breakout.vcxproj -> D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Release\Breakout.exe
