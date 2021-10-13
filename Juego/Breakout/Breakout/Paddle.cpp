@@ -7,7 +7,7 @@ Paddle::Paddle(float yPos) : m_pBlueBrush(NULL), m_pWhiteBrush(NULL)
 {
 	// Initializes the position of the paddle with a fixed X position and Y being at the middle of the screen
 	position.y = yPos;
-	position.x = RESOLUTION_X / 2;
+	position.x = (RESOLUTION_X) / 2;
 }
 
 Paddle::~Paddle()
@@ -19,6 +19,8 @@ Paddle::~Paddle()
 void Paddle::Initialize(ID2D1HwndRenderTarget* m_pRenderTarget)
 {
 	// Creates a blue brush for drawing
+	mod = 1;
+	
 	m_pRenderTarget->CreateSolidColorBrush(
 		D2D1::ColorF(D2D1::ColorF::Blue),
 		&m_pBlueBrush
@@ -56,13 +58,13 @@ void Paddle::MoveToPosition(int xPos)
 {
 	// Moves the paddle to a specified position, also making sure it doesn't go outside the screen
 	position.x = xPos;
-	if (position.x < PADDLE_WIDTH / 2)
+	if (position.x < (PADDLE_WIDTH * mod) / 2)
 	{
-		position.x = PADDLE_WIDTH / 2;
+		position.x = (PADDLE_WIDTH * mod) / 2;
 	}
-	if (position.x > RESOLUTION_X - PADDLE_WIDTH / 2)
+	if (position.x > RESOLUTION_X - (PADDLE_WIDTH * mod) / 2)
 	{
-		position.x = RESOLUTION_X - PADDLE_WIDTH / 2;
+		position.x = RESOLUTION_X - (PADDLE_WIDTH * mod) / 2;
 	}
 }
 
@@ -70,9 +72,21 @@ void Paddle::Draw(ID2D1HwndRenderTarget* m_pRenderTarget)
 {
 	// Draws a rectangle representing the paddle
 	D2D1_RECT_F rectangle1 = D2D1::RectF(
-		position.x - PADDLE_WIDTH / 2, position.y - 5,
-		position.x + PADDLE_WIDTH / 2, position.y + 5
+		position.x - (PADDLE_WIDTH * mod) / 2, position.y - 5,
+		position.x + (PADDLE_WIDTH * mod) / 2, position.y + 5
 	);
 	m_pRenderTarget->FillRectangle(&rectangle1, m_pBlueBrush);
 
+}
+
+
+
+void Paddle::setmod()
+{
+	mod++;
+}
+
+void Paddle::dismod()
+{
+	mod/2;
 }

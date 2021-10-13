@@ -7,6 +7,7 @@
 Ball::Ball() : m_pRedBrush(NULL)
 {
 	// Initial ball position and speed
+	
 	this->Reset();
 }
 
@@ -27,9 +28,11 @@ void Ball::Reset()
 
 void Ball::Initialize(ID2D1HwndRenderTarget* m_pRenderTarget)
 {
+	Prof = 0;
+	mod = 1;
 	// Initializes Direct2D red brush for drawing
 	m_pRenderTarget->CreateSolidColorBrush(
-		D2D1::ColorF(D2D1::ColorF::Red),
+		D2D1::ColorF(D2D1::ColorF::White),
 		&m_pRedBrush
 	);
 }
@@ -53,10 +56,10 @@ void Ball::CheckHitsPaddle(float paddleX)
 	// Checks if the ball hits the paddle. If it does, it bounces back
 	if (position.y > RESOLUTION_Y - 20 && speed.y > 0)
 	{
-		if (position.x > paddleX - PADDLE_WIDTH / 2 && position.x < paddleX + PADDLE_WIDTH / 2)
+		if (position.x > paddleX - (PADDLE_WIDTH * mod) / 2 && position.x < paddleX + (PADDLE_WIDTH * mod) / 2)
 		{
 			// We don't simply want to reverse the speed. In order to make the game more interesting, we change the X speed based on where on the paddle the ball hits
-			float paddleHitPos = (position.x - paddleX) / (PADDLE_WIDTH / 2);
+			float paddleHitPos = (position.x - paddleX) / ((PADDLE_WIDTH * mod) / 2);
 			speed.y = -speed.y;
 			speed.x = paddleHitPos * RECOIL_X_MAX;
 			return;
@@ -78,4 +81,45 @@ void Ball::Draw(ID2D1HwndRenderTarget* m_pRenderTarget)
 		10, 10
 	);
 	m_pRenderTarget->FillEllipse(&ellipseBall, m_pRedBrush);
+}
+
+int Ball::getprof()
+{
+	return Prof;
+}
+
+void Ball::setprof()
+{
+	Prof++;
+}
+
+void Ball::disprof()
+{
+	Prof--;
+}
+
+void Ball::setmod()
+{
+	mod++;
+}
+
+void Ball::dismod()
+{
+	mod/2;
+}
+
+void Ball::setspeed() {
+	speed.x = speed.x * 1.3;
+	speed.y = speed.y * 1.3;
+
+}
+
+void Ball::disspeed() {
+	speed.x = speed.x / 1.3;
+	speed.y = speed.y / 1.3;
+
+}
+
+Point2D Ball::getspeed() {
+	return speed;
 }

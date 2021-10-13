@@ -1,5 +1,5 @@
 #pragma once
-
+#include <string>
 #include "resource.h"
 #include "Point2D.h"
 
@@ -17,9 +17,19 @@ public:
 	void CheckHitsPaddle(float paddleX);
 	boolean IsOutside();
 	void Draw(ID2D1HwndRenderTarget* m_pRenderTarget);
-
+	int getprof();
+	void setprof();
+	void disprof();
+	int Prof;
+	int mod;
+	void setmod();
+	void dismod();
 	Point2D position;
 	Point2D speed;
+
+	void setspeed();
+	Point2D getspeed();
+	void disspeed();
 private:
 
 	ID2D1SolidColorBrush* m_pRedBrush;

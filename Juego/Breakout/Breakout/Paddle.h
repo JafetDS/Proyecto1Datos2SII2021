@@ -11,10 +11,12 @@ public:
 	Paddle(float yPos);
 	~Paddle();
 
+	int mod;
 	void Initialize(ID2D1HwndRenderTarget* m_pRenderTarget);
 	void MoveToPosition(int xPos);
 	void Draw(ID2D1HwndRenderTarget* m_pRenderTarget);
-
+	void setmod();
+	void dismod();
 	Point2D position;
 
 private:

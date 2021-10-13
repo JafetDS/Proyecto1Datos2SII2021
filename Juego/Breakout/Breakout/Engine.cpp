@@ -3,6 +3,8 @@
 #include "Paddle.h"
 #include "Brick.h"
 #include "Engine.h"
+#include "Display.h"
+#include <random>
 
 #pragma comment(lib, "d2d1")
 #pragma comment(lib, "dwrite")
@@ -12,8 +14,12 @@ Engine::Engine() : m_pDirect2dFactory(NULL), m_pRenderTarget(NULL)
     // Initializes everything in the game: ball, paddles, positions
     ball = new Ball();
     paddle = new Paddle(RESOLUTION_Y - 5);
+    display = new Display();
     mouseXPos = RESOLUTION_X / 2;
-
+   
+    int max = 5;
+    int min = 1;
+    //srand(time(NULL));
     // Intitilize bricks
     for (int i = 0; i < 5; i++)
     {
@@ -21,7 +27,7 @@ Engine::Engine() : m_pDirect2dFactory(NULL), m_pRenderTarget(NULL)
         {
             int posX = RESOLUTION_X / 2 + (j - 7) * BRICK_WIDTH;
             int posY = 100 + i * BRICK_HEIGHT;
-            bricks[i * 15 + j] = new Brick(posX, posY);
+            bricks[i * 15 + j] = new Brick(posX, posY, min + rand() % ((max + 1) - min));
         }
     }
 
@@ -48,6 +54,8 @@ HRESULT Engine::InitializeD2D(HWND m_hwnd)
     ball->Initialize(m_pRenderTarget);
 
     paddle->Initialize(m_pRenderTarget);
+
+    display->Initialize(m_pRenderTarget);
 
     for (int i = 0; i < 5; i++)
     {
@@ -91,12 +99,13 @@ void Engine::Logic(double elapsedTime)
         // Checks if the ball hits the left/right paddle and apply the bounce
         ball->CheckHitsPaddle(paddle->position.x);
 
+
         // Ball hits any of the bricks
         for (int i = 0; i < 5; i++)
         {
             for (int j = 0; j < 15; j++)
             {
-                bricks[i * 15 + j]->BallCollision(ball);
+                bricks[i * 15 + j]->BallCollision(ball,display,paddle);
             }
         }
 
@@ -124,6 +133,8 @@ HRESULT Engine::Draw()
     ball->Draw(m_pRenderTarget);
 
     paddle->Draw(m_pRenderTarget);
+
+    display->Draw(m_pRenderTarget);
 
     for (int i = 0; i < 5; i++)
     {

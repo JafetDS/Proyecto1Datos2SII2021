@@ -4,6 +4,7 @@
 #include "Ball.h"
 #include "Paddle.h"
 #include "Brick.h"
+#include "Display.h"
 
 #define RESOLUTION_X 800
 #define RESOLUTION_Y 600
@@ -28,6 +29,9 @@ private:
 	Ball* ball;
 	Paddle* paddle;
 	Brick* bricks[75];
+	Display* display;
+
+	
 
 	int mouseXPos;
 
