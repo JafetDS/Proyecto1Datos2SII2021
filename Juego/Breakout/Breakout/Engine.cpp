@@ -16,6 +16,11 @@ Engine::Engine() : m_pDirect2dFactory(NULL), m_pRenderTarget(NULL)
     paddle = new Paddle(RESOLUTION_Y - 5);
     display = new Display();
     mouseXPos = RESOLUTION_X / 2;
+
+    contbal = 1;
+    contV = 1;
+    contpast = 0;
+
    
     int max = 5;
     int min = 1;
@@ -30,6 +35,9 @@ Engine::Engine() : m_pDirect2dFactory(NULL), m_pRenderTarget(NULL)
             bricks[i * 15 + j] = new Brick(posX, posY, min + rand() % ((max + 1) - min));
         }
     }
+
+
+
 
     playing = true;
 }
@@ -112,10 +120,19 @@ void Engine::Logic(double elapsedTime)
         // If it goes outisde of th eplaying area, the game stops
         if (ball->IsOutside())
         {
+
+            if (contV == 5) {
+                this->~Engine();
+            }
+            else {
+                contV++;
+            }
             playing = false;
         }
     }
 }
+
+
 
 HRESULT Engine::Draw()
 {

@@ -1,7 +1,25 @@
-﻿  Brick.cpp
+﻿  App.cpp
+  Ball.cpp
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(22,47): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(43,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(44,37): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(108,5): warning C4552: '/': result of expression not used
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(112,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(113,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(118,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Ball.cpp(119,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Brick.cpp
+  Engine.cpp
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Engine.cpp(35,50): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Engine.cpp(35,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Paddle.cpp
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Paddle.cpp(60,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Paddle.cpp(63,37): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Paddle.cpp(67,29): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Breakout\Paddle.cpp(91,5): warning C4552: '/': result of expression not used
   Generating code
-  1 of 399 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+  22 of 403 functions ( 5.5%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Breakout.vcxproj -> D:\Datos2\Proyecto1\Proyecto1Datos2SII2021\Juego\Breakout\Release\Breakout.exe

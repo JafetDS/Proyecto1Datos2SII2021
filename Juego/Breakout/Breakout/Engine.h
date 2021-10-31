@@ -22,6 +22,10 @@ public:
 	void Logic(double elapsedTime);
 	HRESULT Draw();
 
+	int contbal;
+	int contV;
+	int contpast;
+
 private:
 	ID2D1Factory* m_pDirect2dFactory;
 	ID2D1HwndRenderTarget* m_pRenderTarget;
@@ -30,6 +34,8 @@ private:
 	Paddle* paddle;
 	Brick* bricks[75];
 	Display* display;
+	Ball* balls[5];
+
 
 	
 

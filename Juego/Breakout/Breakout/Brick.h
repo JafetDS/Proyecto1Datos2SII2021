@@ -30,7 +30,7 @@ public:
 	int color;
 	int Point;
 	int sor;
-
+	int contpass;
 private:
 
 	ID2D1SolidColorBrush* m_pGreenBrush;
